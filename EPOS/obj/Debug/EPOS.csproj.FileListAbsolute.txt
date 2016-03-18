@@ -1,0 +1,12 @@
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\bin\Debug\EPOS.exe.config
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\bin\Debug\EPOS.exe
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\bin\Debug\EPOS.pdb
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.csprojResolveAssemblyReference.cache
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Login.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Properties.Resources.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.csproj.GenerateResource.Cache
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.exe
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.pdb
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Manager.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.ManagerLogin.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Clock.resources
