@@ -52,11 +52,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(833, 307);
+            this.label1.Location = new System.Drawing.Point(863, 307);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(399, 25);
+            this.label1.Size = new System.Drawing.Size(321, 25);
             this.label1.TabIndex = 17;
-            this.label1.Text = "ENTER STAFF CODE TO CONTINUE";
+            this.label1.Text = "Enter Staff Code To Continue";
             // 
             // textBoxCode
             // 
@@ -79,7 +79,7 @@
             this.buttonContinue.Size = new System.Drawing.Size(329, 100);
             this.buttonContinue.TabIndex = 4;
             this.buttonContinue.TabStop = false;
-            this.buttonContinue.Text = "CONTINUE";
+            this.buttonContinue.Text = "Continue";
             this.buttonContinue.UseVisualStyleBackColor = true;
             this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
             // 
@@ -231,7 +231,7 @@
             this.labelDate.AutoSize = true;
             this.labelDate.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.Location = new System.Drawing.Point(1245, 0);
+            this.labelDate.Location = new System.Drawing.Point(1261, 0);
             this.labelDate.Margin = new System.Windows.Forms.Padding(0);
             this.labelDate.Name = "labelDate";
             this.labelDate.Padding = new System.Windows.Forms.Padding(20);
@@ -263,7 +263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.ControlBox = false;
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelDate);

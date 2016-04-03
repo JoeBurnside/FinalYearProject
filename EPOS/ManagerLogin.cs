@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,20 +33,134 @@ namespace EPOS
             switch (this._directTo)
             {
                 case "ManagerMenu":
-                    Manager managermenu = new Manager();
-                    managermenu.Show();
-                    this.Close();
+                    if (textBoxCode.Text != "")
+                    {
+                        Globals.TryLogin(textBoxCode.Text);
+                        if (Globals.UserLevel == "Manager" || Globals.UserLevel == "Supervisor")
+                        {
+                            Manager managermenu = new Manager();
+                            managermenu.ShowDialog();
+                        }
+                        else if (Globals.UserLevel == "Staff")
+                        {
+                            MessageBox.Show("Insufficient Authority");
+                        }
+                        else if (Globals.UserLevel == "")
+                        {
+                            MessageBox.Show("Incorrect Login Code");
+                        }
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Enter Login Code");
+                    }
                     break;
                 case "NoSale":
-                    Application.Exit();
+                    if (textBoxCode.Text != "")
+                    {
+                        Globals.TryLogin(textBoxCode.Text);
+                        if (Globals.UserLevel == "Manager" || Globals.UserLevel == "Supervisor")
+                        {
+                            Application.Exit();
+                        }
+                        else if (Globals.UserLevel == "Staff")
+                        {
+                            MessageBox.Show("Insufficient Authority");
+                        }
+                        else if (Globals.UserLevel == "")
+                        {
+                            MessageBox.Show("Incorrect Login Code");
+                        }
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Enter Login Code");
+                    }
                     break;
                 case "ClockIn":
-                    MessageBox.Show("You have clocked in at " + DateTime.Now.ToString("HH:mm:ss"));
-                    this.Close();
+                    if (textBoxCode.Text != "")
+                    {
+                        Globals.TryLogin(textBoxCode.Text);
+                        if (Globals.Username != "")
+                        {
+                            int ClockIn = Globals.CheckClock(Globals.Userno, "In");
+                            int ClockOut = Globals.CheckClock(Globals.Userno, "Out");
+                            if (ClockIn > 0)
+                            {
+                                if (ClockOut == ClockIn)
+                                {
+                                    AddClock(Globals.Userno, "In");
+                                    MessageBox.Show("You have clocked in at " + DateTime.Now.ToString("HH:mm:ss"));
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("You have already Clocked In");
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {
+                                AddClock(Globals.Userno, "In");
+                                MessageBox.Show("You have clocked in at " + DateTime.Now.ToString("HH:mm:ss"));
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect Login Code");
+                            this.Close();
+                        }
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Enter Login Code");
+                    }
+                    
                     break;
                 case "ClockOut":
-                    MessageBox.Show("You have clocked out at " + DateTime.Now.ToString("HH:mm:ss"));
-                    this.Close();
+                    if (textBoxCode.Text != "")
+                    {
+                        Globals.TryLogin(textBoxCode.Text);
+                        if (Globals.Username != "")
+                        {
+                            int ClockIn = Globals.CheckClock(Globals.Userno, "In");
+                            int ClockOut = Globals.CheckClock(Globals.Userno, "Out");
+                            if (ClockIn > 0)
+                            {
+                                if (ClockOut == ClockIn)
+                                {
+                                    MessageBox.Show("You are already Clocked Out");
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    AddClock(Globals.Userno, "Out");
+                                    MessageBox.Show("You have clocked out at " + DateTime.Now.ToString("HH:mm:ss"));
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("You are not Clocked In");
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect Login Code");
+                            this.Close();
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Enter Login Code");
+                    }
+
                     break;
                 default:
                     MessageBox.Show("Error");
@@ -55,7 +170,7 @@ namespace EPOS
 
         private void ManagerLogin_Load(object sender, EventArgs e)
         {
-            this.TopMost = true;
+              this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             Recolor();
@@ -119,35 +234,24 @@ namespace EPOS
         }
         private void Recolor()
         {
+            Globals.GetColors();
             BackColor = Color.FromName(Globals.Backcolor);
-            button0.BackColor = Color.FromName(Globals.Buttoncolor);
-            button1.BackColor = Color.FromName(Globals.Buttoncolor);
-            button2.BackColor = Color.FromName(Globals.Buttoncolor);
-            button3.BackColor = Color.FromName(Globals.Buttoncolor);
-            button4.BackColor = Color.FromName(Globals.Buttoncolor);
-            button5.BackColor = Color.FromName(Globals.Buttoncolor);
-            button6.BackColor = Color.FromName(Globals.Buttoncolor);
-            button7.BackColor = Color.FromName(Globals.Buttoncolor);
-            button8.BackColor = Color.FromName(Globals.Buttoncolor);
-            button9.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonDel.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonContinue.BackColor = Color.FromName(Globals.Buttoncolor);
-            button0.ForeColor = Color.FromName(Globals.Fontcolor);
-            button1.ForeColor = Color.FromName(Globals.Fontcolor);
-            button2.ForeColor = Color.FromName(Globals.Fontcolor);
-            button3.ForeColor = Color.FromName(Globals.Fontcolor);
-            button4.ForeColor = Color.FromName(Globals.Fontcolor);
-            button5.ForeColor = Color.FromName(Globals.Fontcolor);
-            button6.ForeColor = Color.FromName(Globals.Fontcolor);
-            button7.ForeColor = Color.FromName(Globals.Fontcolor);
-            button8.ForeColor = Color.FromName(Globals.Fontcolor);
-            button9.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonContinue.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonDel.ForeColor = Color.FromName(Globals.Fontcolor);
-            label1.ForeColor = Color.FromName(Globals.Fontcolor);
-            labelDate.ForeColor = Color.FromName(Globals.Fontcolor);
-            labelName.ForeColor = Color.FromName(Globals.Fontcolor);
             labelName.Text = Globals.Pubname;
+            foreach (Control c in this.Controls)
+            {
+                Globals.UpdateColorControls(c);
+            }
+        }
+        private void AddClock(string StaffID, string InOrOut)
+        {
+            SqlConnection clockin = new SqlConnection(Globals.dataconnection);
+            SqlCommand show = new SqlCommand("INSERT INTO ClockIn (StaffID, InOrOut, Time) VALUES (@id, @in, @time)", clockin);
+            clockin.Open();
+            show.Parameters.AddWithValue("@id", StaffID);
+            show.Parameters.AddWithValue("@in", InOrOut);
+            show.Parameters.AddWithValue("@time", DateTime.Now);
+            show.ExecuteNonQuery();
+            clockin.Close();
         }
     }
 }

@@ -208,8 +208,9 @@
             this.buttonContinue.Size = new System.Drawing.Size(329, 100);
             this.buttonContinue.TabIndex = 0;
             this.buttonContinue.TabStop = false;
-            this.buttonContinue.Text = "CONTINUE";
+            this.buttonContinue.Text = "Continue";
             this.buttonContinue.UseVisualStyleBackColor = true;
+            this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
             // 
             // buttonManager
             // 
@@ -220,7 +221,7 @@
             this.buttonManager.Size = new System.Drawing.Size(161, 100);
             this.buttonManager.TabIndex = 0;
             this.buttonManager.TabStop = false;
-            this.buttonManager.Text = "MANAGER MENU";
+            this.buttonManager.Text = "Manager Menu";
             this.buttonManager.UseVisualStyleBackColor = true;
             this.buttonManager.Click += new System.EventHandler(this.buttonManager_Click);
             // 
@@ -233,7 +234,7 @@
             this.buttonClockin.Size = new System.Drawing.Size(161, 100);
             this.buttonClockin.TabIndex = 0;
             this.buttonClockin.TabStop = false;
-            this.buttonClockin.Text = "STAFF CLOCK IN";
+            this.buttonClockin.Text = "Staff Clock In";
             this.buttonClockin.UseVisualStyleBackColor = true;
             this.buttonClockin.Click += new System.EventHandler(this.buttonClockin_Click);
             // 
@@ -246,7 +247,7 @@
             this.buttonNosale.Size = new System.Drawing.Size(161, 100);
             this.buttonNosale.TabIndex = 0;
             this.buttonNosale.TabStop = false;
-            this.buttonNosale.Text = "NO SALE";
+            this.buttonNosale.Text = "No Sale";
             this.buttonNosale.UseVisualStyleBackColor = true;
             this.buttonNosale.Click += new System.EventHandler(this.buttonNosale_Click);
             // 
@@ -288,11 +289,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(836, 310);
+            this.label1.Location = new System.Drawing.Point(863, 310);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(399, 25);
+            this.label1.Size = new System.Drawing.Size(321, 25);
             this.label1.TabIndex = 3;
-            this.label1.Text = "ENTER STAFF CODE TO CONTINUE";
+            this.label1.Text = "Enter Staff Code To Continue";
             // 
             // labelName
             // 

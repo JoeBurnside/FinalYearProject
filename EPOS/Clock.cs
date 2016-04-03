@@ -38,28 +38,26 @@ namespace EPOS
         private void buttonIn_Click(object sender, EventArgs e)
         {
             ManagerLogin managerLogin = new ManagerLogin("ClockIn");
-            managerLogin.Show();
+            managerLogin.ShowDialog();
             this.Close();
         }
 
         private void buttonOut_Click(object sender, EventArgs e)
         {
             ManagerLogin managerLogin = new ManagerLogin("ClockOut");
-            managerLogin.Show();
+            managerLogin.ShowDialog();
             this.Close();
         }
         private void Recolor()
         {
+            Globals.GetColors();
             BackColor = Color.FromName(Globals.Backcolor);
-            buttonIn.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonOut.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonBack.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonIn.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonOut.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonBack.ForeColor = Color.FromName(Globals.Fontcolor);
-            labelDate.ForeColor = Color.FromName(Globals.Fontcolor);
-            labelName.ForeColor = Color.FromName(Globals.Fontcolor);
             labelName.Text = Globals.Pubname;
+            foreach (Control c in this.Controls)
+            {
+                Globals.UpdateColorControls(c);
+            }
+        
         }
     }
 }

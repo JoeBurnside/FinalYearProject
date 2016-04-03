@@ -66,7 +66,7 @@
             this.buttonIn.Size = new System.Drawing.Size(533, 468);
             this.buttonIn.TabIndex = 3;
             this.buttonIn.TabStop = false;
-            this.buttonIn.Text = "CLOCK \r\nIN";
+            this.buttonIn.Text = "Clock In";
             this.buttonIn.UseVisualStyleBackColor = true;
             this.buttonIn.Click += new System.EventHandler(this.buttonIn_Click);
             // 
@@ -79,7 +79,7 @@
             this.buttonOut.Size = new System.Drawing.Size(533, 468);
             this.buttonOut.TabIndex = 4;
             this.buttonOut.TabStop = false;
-            this.buttonOut.Text = "CLOCK OUT";
+            this.buttonOut.Text = "Clock Out";
             this.buttonOut.UseVisualStyleBackColor = true;
             this.buttonOut.Click += new System.EventHandler(this.buttonOut_Click);
             // 
@@ -92,7 +92,7 @@
             this.buttonBack.Size = new System.Drawing.Size(350, 100);
             this.buttonBack.TabIndex = 5;
             this.buttonBack.TabStop = false;
-            this.buttonBack.Text = "BACK";
+            this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 

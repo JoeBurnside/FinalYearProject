@@ -43,45 +43,34 @@ namespace EPOS
         private void buttonNoSale_Click(object sender, EventArgs e)
         {
             ManagerLogin managerLogin = new ManagerLogin("NoSale");
-            managerLogin.Show();
+            managerLogin.ShowDialog();
         }
         private void Recolor()
         {
+            Globals.GetColors();
             BackColor = Color.FromName(Globals.Backcolor);
-            buttonBack.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonEnd.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonSalesTot.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonStaffTot.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonTables.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonButtonMan.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonCategoryMan.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonProductMan.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonUserMan.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonPaymentMan.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonShowTrans.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonSettings.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonNoSale.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonBack.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonEnd.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonSalesTot.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonStaffTot.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonTables.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonButtonMan.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonCategoryMan.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonProductMan.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonUserMan.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonPaymentMan.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonShowTrans.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonSettings.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonNoSale.ForeColor = Color.FromName(Globals.Fontcolor);
-            labelDate.ForeColor = Color.FromName(Globals.Fontcolor);
-            labelName.ForeColor = Color.FromName(Globals.Fontcolor);
             labelName.Text = Globals.Pubname;
+            foreach (Control c in this.Controls)
+            {
+                Globals.UpdateColorControls(c);
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonShowTrans_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSettings_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.ShowDialog();
+            Recolor();
         }
     }
 }

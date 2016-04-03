@@ -10,3 +10,5 @@ C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.pdb
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Manager.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.ManagerLogin.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Clock.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Keyboard.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Settings.resources

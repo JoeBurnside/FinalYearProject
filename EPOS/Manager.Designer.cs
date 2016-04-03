@@ -75,7 +75,7 @@
             this.buttonBack.Size = new System.Drawing.Size(350, 100);
             this.buttonBack.TabIndex = 2;
             this.buttonBack.TabStop = false;
-            this.buttonBack.Text = "BACK";
+            this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
@@ -88,8 +88,9 @@
             this.buttonSettings.Size = new System.Drawing.Size(254, 120);
             this.buttonSettings.TabIndex = 4;
             this.buttonSettings.TabStop = false;
-            this.buttonSettings.Text = "SYSTEM SETTINGS";
+            this.buttonSettings.Text = "System Settings";
             this.buttonSettings.UseVisualStyleBackColor = true;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // buttonShowTrans
             // 
@@ -100,8 +101,9 @@
             this.buttonShowTrans.Size = new System.Drawing.Size(254, 120);
             this.buttonShowTrans.TabIndex = 5;
             this.buttonShowTrans.TabStop = false;
-            this.buttonShowTrans.Text = "SHOW TRANSACTIONS";
+            this.buttonShowTrans.Text = "Show Transactions";
             this.buttonShowTrans.UseVisualStyleBackColor = true;
+            this.buttonShowTrans.Click += new System.EventHandler(this.buttonShowTrans_Click);
             // 
             // buttonNoSale
             // 
@@ -112,7 +114,7 @@
             this.buttonNoSale.Size = new System.Drawing.Size(254, 120);
             this.buttonNoSale.TabIndex = 6;
             this.buttonNoSale.TabStop = false;
-            this.buttonNoSale.Text = "NO SALE";
+            this.buttonNoSale.Text = "No Sale";
             this.buttonNoSale.UseVisualStyleBackColor = true;
             this.buttonNoSale.Click += new System.EventHandler(this.buttonNoSale_Click);
             // 
@@ -125,7 +127,7 @@
             this.buttonPaymentMan.Size = new System.Drawing.Size(254, 120);
             this.buttonPaymentMan.TabIndex = 7;
             this.buttonPaymentMan.TabStop = false;
-            this.buttonPaymentMan.Text = "MANAGE PAYMENT METHODS";
+            this.buttonPaymentMan.Text = "Manage Payment Methods";
             this.buttonPaymentMan.UseVisualStyleBackColor = true;
             // 
             // buttonCategoryMan
@@ -137,7 +139,7 @@
             this.buttonCategoryMan.Size = new System.Drawing.Size(254, 120);
             this.buttonCategoryMan.TabIndex = 11;
             this.buttonCategoryMan.TabStop = false;
-            this.buttonCategoryMan.Text = "MANAGE CATEGORIES";
+            this.buttonCategoryMan.Text = "Manage Categories";
             this.buttonCategoryMan.UseVisualStyleBackColor = true;
             // 
             // buttonButtonMan
@@ -149,7 +151,7 @@
             this.buttonButtonMan.Size = new System.Drawing.Size(254, 120);
             this.buttonButtonMan.TabIndex = 10;
             this.buttonButtonMan.TabStop = false;
-            this.buttonButtonMan.Text = "MANAGE BUTTONS";
+            this.buttonButtonMan.Text = "Manage Buttons";
             this.buttonButtonMan.UseVisualStyleBackColor = true;
             // 
             // buttonProductMan
@@ -161,7 +163,7 @@
             this.buttonProductMan.Size = new System.Drawing.Size(254, 120);
             this.buttonProductMan.TabIndex = 9;
             this.buttonProductMan.TabStop = false;
-            this.buttonProductMan.Text = "MANAGE PRODUCTS";
+            this.buttonProductMan.Text = "Manage Products";
             this.buttonProductMan.UseVisualStyleBackColor = true;
             // 
             // buttonUserMan
@@ -173,7 +175,7 @@
             this.buttonUserMan.Size = new System.Drawing.Size(254, 120);
             this.buttonUserMan.TabIndex = 8;
             this.buttonUserMan.TabStop = false;
-            this.buttonUserMan.Text = "MANAGE \r\nUSERS";
+            this.buttonUserMan.Text = "Manage Users";
             this.buttonUserMan.UseVisualStyleBackColor = true;
             // 
             // buttonEnd
@@ -185,7 +187,7 @@
             this.buttonEnd.Size = new System.Drawing.Size(254, 120);
             this.buttonEnd.TabIndex = 15;
             this.buttonEnd.TabStop = false;
-            this.buttonEnd.Text = "END OF DAY";
+            this.buttonEnd.Text = "End Of Day";
             this.buttonEnd.UseVisualStyleBackColor = true;
             this.buttonEnd.Click += new System.EventHandler(this.buttonEnd_Click);
             // 
@@ -198,7 +200,7 @@
             this.buttonSalesTot.Size = new System.Drawing.Size(254, 120);
             this.buttonSalesTot.TabIndex = 14;
             this.buttonSalesTot.TabStop = false;
-            this.buttonSalesTot.Text = "SALES \r\nTOTALS";
+            this.buttonSalesTot.Text = "Sales Totals";
             this.buttonSalesTot.UseVisualStyleBackColor = true;
             // 
             // buttonStaffTot
@@ -210,7 +212,7 @@
             this.buttonStaffTot.Size = new System.Drawing.Size(254, 120);
             this.buttonStaffTot.TabIndex = 13;
             this.buttonStaffTot.TabStop = false;
-            this.buttonStaffTot.Text = "STAFF \r\nTOTALS";
+            this.buttonStaffTot.Text = "Staff Totals";
             this.buttonStaffTot.UseVisualStyleBackColor = true;
             // 
             // buttonTables
@@ -222,7 +224,7 @@
             this.buttonTables.Size = new System.Drawing.Size(254, 120);
             this.buttonTables.TabIndex = 12;
             this.buttonTables.TabStop = false;
-            this.buttonTables.Text = "TABLE \r\nSTATUS";
+            this.buttonTables.Text = "Table Status";
             this.buttonTables.UseVisualStyleBackColor = true;
             this.buttonTables.Click += new System.EventHandler(this.button12_Click);
             // 

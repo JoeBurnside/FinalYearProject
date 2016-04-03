@@ -23,18 +23,17 @@ namespace EPOS
             TopMost = true;
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
-            GetColors();
             Recolor();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBoxCode.Text = textBoxCode.Text+"1";
+            textBoxCode.Text = textBoxCode.Text + "1";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-          labelDate.Text = DateTime.Now.ToString("MMMM dd, yyyy") + Environment.NewLine + DateTime.Now.ToString("HH:mm:ss");   
+            labelDate.Text = DateTime.Now.ToString("MMMM dd, yyyy") + Environment.NewLine + DateTime.Now.ToString("HH:mm:ss");
         }
 
         private void buttonDel_Click(object sender, EventArgs e)
@@ -91,72 +90,73 @@ namespace EPOS
         private void buttonManager_Click(object sender, EventArgs e)
         {
             ManagerLogin managerLogin = new ManagerLogin("ManagerMenu");
-            managerLogin.Show();
+            managerLogin.ShowDialog();
+            Recolor();
+            textBoxCode.Text = "";
         }
 
         private void buttonNosale_Click(object sender, EventArgs e)
         {
             ManagerLogin managerLogin = new ManagerLogin("NoSale");
-            managerLogin.Show();
+            managerLogin.ShowDialog();
+            textBoxCode.Text = "";
         }
 
         private void buttonClockin_Click(object sender, EventArgs e)
         {
             Clock clock = new Clock();
-            clock.Show();
+            clock.ShowDialog();
+            textBoxCode.Text = "";
         }
 
         private void Recolor()
         {
+            Globals.GetColors();
             BackColor = Color.FromName(Globals.Backcolor);
-            button0.BackColor = Color.FromName(Globals.Buttoncolor);
-            button1.BackColor = Color.FromName(Globals.Buttoncolor);
-            button2.BackColor = Color.FromName(Globals.Buttoncolor);
-            button3.BackColor = Color.FromName(Globals.Buttoncolor);
-            button4.BackColor = Color.FromName(Globals.Buttoncolor);
-            button5.BackColor = Color.FromName(Globals.Buttoncolor);
-            button6.BackColor = Color.FromName(Globals.Buttoncolor);
-            button7.BackColor = Color.FromName(Globals.Buttoncolor);
-            button8.BackColor = Color.FromName(Globals.Buttoncolor);
-            button9.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonDel.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonClockin.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonContinue.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonManager.BackColor = Color.FromName(Globals.Buttoncolor);
-            buttonNosale.BackColor = Color.FromName(Globals.Buttoncolor);
-            button0.ForeColor = Color.FromName(Globals.Fontcolor);
-            button1.ForeColor = Color.FromName(Globals.Fontcolor);
-            button2.ForeColor = Color.FromName(Globals.Fontcolor);
-            button3.ForeColor = Color.FromName(Globals.Fontcolor);
-            button4.ForeColor = Color.FromName(Globals.Fontcolor);
-            button5.ForeColor = Color.FromName(Globals.Fontcolor);
-            button6.ForeColor = Color.FromName(Globals.Fontcolor);
-            button7.ForeColor = Color.FromName(Globals.Fontcolor);
-            button8.ForeColor = Color.FromName(Globals.Fontcolor);
-            button9.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonClockin.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonContinue.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonManager.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonNosale.ForeColor = Color.FromName(Globals.Fontcolor);
-            buttonDel.ForeColor = Color.FromName(Globals.Fontcolor);
-            label1.ForeColor = Color.FromName(Globals.Fontcolor);
-            labelDate.ForeColor = Color.FromName(Globals.Fontcolor);
-            labelName.ForeColor = Color.FromName(Globals.Fontcolor);
             labelName.Text = Globals.Pubname;
+            foreach (Control c in this.Controls)
+            {
+                Globals.UpdateColorControls(c);
+            }
         }
-        private void GetColors()
+
+        private void buttonContinue_Click(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader(@"C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\Settings.txt");
-            List<string> lines = new List<string>();
-            while (!sr.EndOfStream)
-            lines.Add(sr.ReadLine());
-            sr.Close();
-
-            Globals.Pubname = lines[0];
-            Globals.Fontcolor = lines[1];
-            Globals.Backcolor = lines[2];
-            Globals.Buttoncolor = lines[3];
+            if (textBoxCode.Text != "")
+            {
+                Globals.TryLogin(textBoxCode.Text);
+                if (Globals.Username != "")
+                {
+                    int ClockIn = Globals.CheckClock(Globals.Userno, "In");
+                    int ClockOut = Globals.CheckClock(Globals.Userno, "Out");
+                    if (ClockIn > 0)
+                    {
+                        if (ClockOut > 0)
+                        {
+                            MessageBox.Show("You are not Clocked In");
+                            textBoxCode.Text = "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Continue Successful");
+                            textBoxCode.Text = "";
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("You are not Clocked In");
+                        textBoxCode.Text = "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Login Code");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Enter Login Code");
+            }
         }
-
     }
 }
