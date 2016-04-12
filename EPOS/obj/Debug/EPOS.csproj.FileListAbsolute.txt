@@ -12,3 +12,17 @@ C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.ManagerLogin.resourc
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Clock.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Keyboard.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Settings.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Category.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.PaymentMethod.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Payments.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Products.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Staff.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddEditCategory.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.ProductMenu.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Units.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddEditUnits.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddEditPayment.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddEditStaff.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Numberpad.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddEditDiscount.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Discount.resources

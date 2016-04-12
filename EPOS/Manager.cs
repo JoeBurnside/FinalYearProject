@@ -42,8 +42,7 @@ namespace EPOS
 
         private void buttonNoSale_Click(object sender, EventArgs e)
         {
-            ManagerLogin managerLogin = new ManagerLogin("NoSale");
-            managerLogin.ShowDialog();
+            Application.Exit();
         }
         private void Recolor()
         {
@@ -71,6 +70,40 @@ namespace EPOS
             Settings settings = new Settings();
             settings.ShowDialog();
             Recolor();
+        }
+
+        private void buttonCategoryMan_Click(object sender, EventArgs e)
+        {
+            Category category = new Category();
+            category.ShowDialog();
+        }
+
+        private void buttonUserMan_Click(object sender, EventArgs e)
+        {
+            Staff staff = new Staff();
+            staff.ShowDialog();
+        }
+
+        private void buttonProductMan_Click(object sender, EventArgs e)
+        {
+            ProductMenu product = new ProductMenu();
+            product.ShowDialog();
+        }
+
+        private void buttonStaffTot_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonSalesTot_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonPaymentMan_Click(object sender, EventArgs e)
+        {
+            Payments payments = new Payments();
+            payments.ShowDialog();
         }
     }
 }

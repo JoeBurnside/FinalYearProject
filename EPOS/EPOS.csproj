@@ -61,11 +61,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditCategory.Designer.cs">
+      <DependentUpon>AddEditCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditDiscount.Designer.cs">
+      <DependentUpon>AddEditDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditPayment.Designer.cs">
+      <DependentUpon>AddEditPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditStaff.Designer.cs">
+      <DependentUpon>AddEditStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditUnits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditUnits.Designer.cs">
+      <DependentUpon>AddEditUnits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Discount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Discount.Designer.cs">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListObject.cs" />
     <Compile Include="Clock.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clock.Designer.cs">
       <DependentUpon>Clock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numberpad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numberpad.Designer.cs">
+      <DependentUpon>Numberpad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentMethod.Designer.cs">
+      <DependentUpon>PaymentMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments.Designer.cs">
+      <DependentUpon>Payments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductMenu.Designer.cs">
+      <DependentUpon>ProductMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products.Designer.cs">
+      <DependentUpon>Products.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
@@ -100,8 +173,57 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff.Designer.cs">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Units.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Units.Designer.cs">
+      <DependentUpon>Units.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddEditCategory.resx">
+      <DependentUpon>AddEditCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditDiscount.resx">
+      <DependentUpon>AddEditDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditPayment.resx">
+      <DependentUpon>AddEditPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditStaff.resx">
+      <DependentUpon>AddEditStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditUnits.resx">
+      <DependentUpon>AddEditUnits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clock.resx">
       <DependentUpon>Clock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Discount.resx">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numberpad.resx">
+      <DependentUpon>Numberpad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentMethod.resx">
+      <DependentUpon>PaymentMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments.resx">
+      <DependentUpon>Payments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductMenu.resx">
+      <DependentUpon>ProductMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products.resx">
+      <DependentUpon>Products.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -127,6 +249,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Staff.resx">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Units.resx">
+      <DependentUpon>Units.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

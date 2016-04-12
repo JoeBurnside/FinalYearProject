@@ -45,6 +45,7 @@
             this.buttonStaffTot = new System.Windows.Forms.Button();
             this.buttonTables = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelDate
@@ -129,6 +130,7 @@
             this.buttonPaymentMan.TabStop = false;
             this.buttonPaymentMan.Text = "Manage Payment Methods";
             this.buttonPaymentMan.UseVisualStyleBackColor = true;
+            this.buttonPaymentMan.Click += new System.EventHandler(this.buttonPaymentMan_Click);
             // 
             // buttonCategoryMan
             // 
@@ -141,6 +143,7 @@
             this.buttonCategoryMan.TabStop = false;
             this.buttonCategoryMan.Text = "Manage Categories";
             this.buttonCategoryMan.UseVisualStyleBackColor = true;
+            this.buttonCategoryMan.Click += new System.EventHandler(this.buttonCategoryMan_Click);
             // 
             // buttonButtonMan
             // 
@@ -165,6 +168,7 @@
             this.buttonProductMan.TabStop = false;
             this.buttonProductMan.Text = "Manage Products";
             this.buttonProductMan.UseVisualStyleBackColor = true;
+            this.buttonProductMan.Click += new System.EventHandler(this.buttonProductMan_Click);
             // 
             // buttonUserMan
             // 
@@ -177,6 +181,7 @@
             this.buttonUserMan.TabStop = false;
             this.buttonUserMan.Text = "Manage Users";
             this.buttonUserMan.UseVisualStyleBackColor = true;
+            this.buttonUserMan.Click += new System.EventHandler(this.buttonUserMan_Click);
             // 
             // buttonEnd
             // 
@@ -202,6 +207,7 @@
             this.buttonSalesTot.TabStop = false;
             this.buttonSalesTot.Text = "Sales Totals";
             this.buttonSalesTot.UseVisualStyleBackColor = true;
+            this.buttonSalesTot.Click += new System.EventHandler(this.buttonSalesTot_Click);
             // 
             // buttonStaffTot
             // 
@@ -214,6 +220,7 @@
             this.buttonStaffTot.TabStop = false;
             this.buttonStaffTot.Text = "Staff Totals";
             this.buttonStaffTot.UseVisualStyleBackColor = true;
+            this.buttonStaffTot.Click += new System.EventHandler(this.buttonStaffTot_Click);
             // 
             // buttonTables
             // 
@@ -240,12 +247,22 @@
             this.labelName.TabIndex = 16;
             this.labelName.Text = "Pub Name";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(507, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(361, 55);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Manager Menu";
+            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(29F, 55F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.buttonEnd);
             this.Controls.Add(this.buttonSalesTot);
@@ -292,5 +309,6 @@
         private System.Windows.Forms.Button buttonStaffTot;
         private System.Windows.Forms.Button buttonTables;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label label1;
     }
 }

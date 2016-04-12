@@ -125,5 +125,11 @@ namespace EPOS
                 myControl.ForeColor = Color.FromName(Globals.Fontcolor);
             }
         }
+        private static int m_idno;
+        public static int IDNo
+        {
+            get { return m_idno; }
+            set { m_idno = value; }
+        }
     }
 }
