@@ -70,26 +70,33 @@ namespace EPOS
         {
             if (textBoxName.Text != "")
             {
-                if (Globals.IDNo != -1)
+                if (textBoxName.Text.Length <= 25)
                 {
-                    SqlConnection uni = new SqlConnection(Globals.dataconnection);
-                    SqlCommand show = new SqlCommand("UPDATE Unit SET Name = @name WHERE UnitID = @id", uni);
-                    uni.Open();
-                    show.Parameters.AddWithValue("@id", Globals.IDNo);
-                    show.Parameters.AddWithValue("@name", textBoxName.Text);
-                    show.ExecuteNonQuery();
-                    uni.Close();
+                    if (Globals.IDNo != -1)
+                    {
+                        SqlConnection uni = new SqlConnection(Globals.dataconnection);
+                        SqlCommand show = new SqlCommand("UPDATE Unit SET Name = @name WHERE UnitID = @id", uni);
+                        uni.Open();
+                        show.Parameters.AddWithValue("@id", Globals.IDNo);
+                        show.Parameters.AddWithValue("@name", textBoxName.Text);
+                        show.ExecuteNonQuery();
+                        uni.Close();
+                    }
+                    else
+                    {
+                        SqlConnection uni = new SqlConnection(Globals.dataconnection);
+                        SqlCommand show = new SqlCommand("INSERT INTO Unit (Name) VALUES (@name)", uni);
+                        uni.Open();
+                        show.Parameters.AddWithValue("@name", textBoxName.Text);
+                        show.ExecuteNonQuery();
+                        uni.Close();
+                    }
+                    this.Close();
                 }
                 else
                 {
-                    SqlConnection uni = new SqlConnection(Globals.dataconnection);
-                    SqlCommand show = new SqlCommand("INSERT INTO Unit (Name) VALUES (@name)", uni);
-                    uni.Open();
-                    show.Parameters.AddWithValue("@name", textBoxName.Text);
-                    show.ExecuteNonQuery();
-                    uni.Close();
+                    MessageBox.Show("Unit name is too long");
                 }
-                this.Close();
             }
             else
             {

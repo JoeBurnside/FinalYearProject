@@ -107,15 +107,22 @@ namespace EPOS
         {
             if (textBoxName.Text != "")
             {
+                if (textBoxName.Text.Length <= 25)
+                {
                     int id;
                     if (int.TryParse(textBoxAmount.Text, out id))
                     {
-                    addeditdiscount(id);
+                        addeditdiscount(id);
                     }
                     else
                     {
                         MessageBox.Show("Discount amount must be a whole number");
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Discount name is too long");
+                }
             }
             else
             {

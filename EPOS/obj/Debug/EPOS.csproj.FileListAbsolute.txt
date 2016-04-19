@@ -18,7 +18,6 @@ C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Payments.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Products.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Staff.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddEditCategory.resources
-C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.ProductMenu.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Units.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddEditUnits.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddEditPayment.resources
@@ -26,3 +25,10 @@ C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddEditStaff.resourc
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Numberpad.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddEditDiscount.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Discount.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddEditProduct.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.SaleUnit.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.ApplyDiscount.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Buttons.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddMenu.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.EditButton.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.SaleScreen.resources

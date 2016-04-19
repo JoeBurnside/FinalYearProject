@@ -60,7 +60,7 @@ namespace EPOS
             comboBoxButton.SelectedItem = Globals.Buttoncolor;
             comboBoxFont.SelectedItem = Globals.Fontcolor;
             textBoxName.Text = Globals.Pubname;
-        }
+                }
         private void comboBoxBg_DrawItem(object sender, DrawItemEventArgs e)
         {
             Graphics g = e.Graphics;

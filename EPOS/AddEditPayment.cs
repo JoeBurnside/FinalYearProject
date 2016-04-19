@@ -27,26 +27,33 @@ namespace EPOS
         {
             if (textBoxName.Text != "")
             {
-                if (Globals.IDNo != -1)
+                if (textBoxName.Text.Length <= 25)
                 {
-                    SqlConnection pay = new SqlConnection(Globals.dataconnection);
-                    SqlCommand show = new SqlCommand("UPDATE Payment SET Name = @name WHERE PaymentID = @id", pay);
-                    pay.Open();
-                    show.Parameters.AddWithValue("@id", Globals.IDNo);
-                    show.Parameters.AddWithValue("@name", textBoxName.Text);
-                    show.ExecuteNonQuery();
-                    pay.Close();
+                    if (Globals.IDNo != -1)
+                    {
+                        SqlConnection pay = new SqlConnection(Globals.dataconnection);
+                        SqlCommand show = new SqlCommand("UPDATE Payment SET Name = @name WHERE PaymentID = @id", pay);
+                        pay.Open();
+                        show.Parameters.AddWithValue("@id", Globals.IDNo);
+                        show.Parameters.AddWithValue("@name", textBoxName.Text);
+                        show.ExecuteNonQuery();
+                        pay.Close();
+                    }
+                    else
+                    {
+                        SqlConnection pay = new SqlConnection(Globals.dataconnection);
+                        SqlCommand show = new SqlCommand("INSERT INTO Payment (Name) VALUES (@name)", pay);
+                        pay.Open();
+                        show.Parameters.AddWithValue("@name", textBoxName.Text);
+                        show.ExecuteNonQuery();
+                        pay.Close();
+                    }
+                    this.Close();
                 }
                 else
                 {
-                    SqlConnection pay = new SqlConnection(Globals.dataconnection);
-                    SqlCommand show = new SqlCommand("INSERT INTO Payment (Name) VALUES (@name)", pay);
-                    pay.Open();
-                    show.Parameters.AddWithValue("@name", textBoxName.Text);
-                    show.ExecuteNonQuery();
-                    pay.Close();
+                    MessageBox.Show("Payment name is too long");
                 }
-                this.Close();
             }
             else
             {

@@ -156,6 +156,7 @@
             this.buttonButtonMan.TabStop = false;
             this.buttonButtonMan.Text = "Manage Buttons";
             this.buttonButtonMan.UseVisualStyleBackColor = true;
+            this.buttonButtonMan.Click += new System.EventHandler(this.buttonButtonMan_Click);
             // 
             // buttonProductMan
             // 

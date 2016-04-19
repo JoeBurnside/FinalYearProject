@@ -32,8 +32,6 @@ namespace EPOS
         {
             Globals.GetColors();
             BackColor = Color.FromName(Globals.Backcolor);
-            listBox1.BackColor = Color.FromName(Globals.Backcolor);
-            listBox1.ForeColor = Color.FromName(Globals.Fontcolor);
             labelName.Text = Globals.Pubname;
             foreach (Control c in this.Controls)
             {
@@ -106,13 +104,19 @@ namespace EPOS
                 switch (dr)
                 {
                     case DialogResult.Yes:
-                        int id = int.Parse(listBox1.SelectedValue.ToString());
-                        SqlConnection cat = new SqlConnection(Globals.dataconnection);
-                        cat.Open();
-                        SqlCommand delete = new SqlCommand("DELETE FROM Category WHERE CategoryID = @id", cat);
-                        delete.Parameters.AddWithValue("@id", id);
-                        delete.ExecuteNonQuery();
-                        cat.Close();
+                        try {
+                            int id = int.Parse(listBox1.SelectedValue.ToString());
+                            SqlConnection cat = new SqlConnection(Globals.dataconnection);
+                            cat.Open();
+                            SqlCommand delete = new SqlCommand("DELETE FROM Category WHERE CategoryID = @id", cat);
+                            delete.Parameters.AddWithValue("@id", id);
+                            delete.ExecuteNonQuery();
+                            cat.Close();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("This category cannot be deleted as it is currently has products assigned to it");
+                        }
                         break;
                     case DialogResult.No: break;
                 }

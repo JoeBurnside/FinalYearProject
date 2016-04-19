@@ -59,7 +59,7 @@
             this.labelDate.AutoSize = true;
             this.labelDate.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.Location = new System.Drawing.Point(1257, 0);
+            this.labelDate.Location = new System.Drawing.Point(1249, 0);
             this.labelDate.Margin = new System.Windows.Forms.Padding(0);
             this.labelDate.Name = "labelDate";
             this.labelDate.Padding = new System.Windows.Forms.Padding(20);
@@ -156,7 +156,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.buttonEdit);

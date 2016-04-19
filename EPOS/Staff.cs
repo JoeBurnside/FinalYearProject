@@ -38,13 +38,19 @@ namespace EPOS
                 switch (dr)
                 {
                     case DialogResult.Yes:
-                        int id = int.Parse(listBox1.SelectedValue.ToString());
-                        SqlConnection sta = new SqlConnection(Globals.dataconnection);
-                        sta.Open();
-                        SqlCommand delete = new SqlCommand("DELETE FROM Staff WHERE StaffID = @id", sta);
-                        delete.Parameters.AddWithValue("@id", id);
-                        delete.ExecuteNonQuery();
-                        sta.Close();
+                        try {
+                            int id = int.Parse(listBox1.SelectedValue.ToString());
+                            SqlConnection sta = new SqlConnection(Globals.dataconnection);
+                            sta.Open();
+                            SqlCommand delete = new SqlCommand("DELETE FROM Staff WHERE StaffID = @id", sta);
+                            delete.Parameters.AddWithValue("@id", id);
+                            delete.ExecuteNonQuery();
+                            sta.Close();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("This user can not be deleted as their account is currently in use");
+                        }
                         break;
                     case DialogResult.No: break;
                 }
@@ -111,8 +117,6 @@ namespace EPOS
         {
             Globals.GetColors();
             BackColor = Color.FromName(Globals.Backcolor);
-            listBox1.BackColor = Color.FromName(Globals.Backcolor);
-            listBox1.ForeColor = Color.FromName(Globals.Fontcolor);
             labelName.Text = Globals.Pubname;
             foreach (Control c in this.Controls)
             {

@@ -32,8 +32,6 @@ namespace EPOS
         {
             Globals.GetColors();
             BackColor = Color.FromName(Globals.Backcolor);
-            listBox1.BackColor = Color.FromName(Globals.Backcolor);
-            listBox1.ForeColor = Color.FromName(Globals.Fontcolor);
             labelName.Text = Globals.Pubname;
             foreach (Control c in this.Controls)
             {
@@ -79,13 +77,19 @@ namespace EPOS
             switch (dr)
             {
                 case DialogResult.Yes:
-                    int id = int.Parse(listBox1.SelectedValue.ToString());
-                    SqlConnection prod = new SqlConnection(Globals.dataconnection);
-                    prod.Open();
-                    SqlCommand delete = new SqlCommand("DELETE FROM Product WHERE ProductID = @id", prod);
-                    delete.Parameters.AddWithValue("@id", id);
-                    delete.ExecuteNonQuery();
-                    prod.Close();
+                        try {
+                            int id = int.Parse(listBox1.SelectedValue.ToString());
+                            SqlConnection prod = new SqlConnection(Globals.dataconnection);
+                            prod.Open();
+                            SqlCommand delete = new SqlCommand("DELETE FROM Product WHERE ProductID = @id", prod);
+                            delete.Parameters.AddWithValue("@id", id);
+                            delete.ExecuteNonQuery();
+                            prod.Close();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("This product cannot be deleted as it is currently in use");
+                        }
                     break;
                 case DialogResult.No: break;
             }
@@ -100,11 +104,22 @@ namespace EPOS
         {
             if (listBox1.SelectedIndex != -1)
             {
-
+                Globals.IDNo = int.Parse(listBox1.SelectedValue.ToString());
+                AddEditProduct addedit = new AddEditProduct();
+                addedit.ShowDialog();
+                fillbox();
             }
             else {
                 MessageBox.Show("Please select a product from the list");
             }
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            Globals.IDNo = -1;
+            AddEditProduct addedit = new AddEditProduct();
+            addedit.ShowDialog();
+            fillbox();
         }
     }
 }

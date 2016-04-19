@@ -67,6 +67,17 @@ namespace EPOS
             get { return m_userno; }
             set { m_userno = value; }
         }
+        public static void AddNoSale()
+        {
+            SqlConnection nosale = new SqlConnection(Globals.dataconnection);
+            SqlCommand insert = new SqlCommand("INSERT INTO Transactions (Type, Time, StaffID) VALUES (@type, @time, @staffid)", nosale);
+            nosale.Open();
+            insert.Parameters.AddWithValue("@type", "No Sale");
+            insert.Parameters.AddWithValue("@time", DateTime.Now);
+            insert.Parameters.AddWithValue("@staffid", Globals.Userno);
+            insert.ExecuteNonQuery();
+            nosale.Close();
+        }
         public static void TryLogin(string id)
         {
             SqlConnection login = new SqlConnection(Globals.dataconnection);
@@ -124,12 +135,29 @@ namespace EPOS
             {
                 myControl.ForeColor = Color.FromName(Globals.Fontcolor);
             }
+            if (myControl is ListBox)
+            {
+                myControl.BackColor = Color.FromName(Globals.Backcolor);
+                myControl.ForeColor = Color.FromName(Globals.Fontcolor);
+            }
         }
         private static int m_idno;
         public static int IDNo
         {
             get { return m_idno; }
             set { m_idno = value; }
+        }
+        private static int m_btnno;
+        public static int ButtonNo
+        {
+            get { return m_btnno; }
+            set { m_btnno = value; }
+        }
+        private static int m_menuno;
+        public static int MenuNo
+        {
+            get { return m_menuno; }
+            set { m_menuno = value; }
         }
     }
 }

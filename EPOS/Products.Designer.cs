@@ -122,6 +122,7 @@
             this.buttonAdd.TabStop = false;
             this.buttonAdd.Text = "Add Product";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonBack
             // 

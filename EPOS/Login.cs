@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
+using System.Drawing.Printing;
+using System.Data.SqlClient;
 
 namespace EPOS
 {
@@ -97,9 +100,19 @@ namespace EPOS
 
         private void buttonNosale_Click(object sender, EventArgs e)
         {
-            ManagerLogin managerLogin = new ManagerLogin("NoSale");
-            managerLogin.ShowDialog();
-            textBoxCode.Text = "";
+           ManagerLogin managerLogin = new ManagerLogin("NoSale");
+           managerLogin.ShowDialog();
+           textBoxCode.Text = "";
+           // String printerstring = Printer.title + Printer.Newline + Printer.normaltext + "Testing testicles";
+           // printerstring += (char)27 + "D" + (char)30 + (char)0;
+           // for (int i = 0; i < 10; i++)
+           // {
+           //     printerstring += Printer.Newline + Printer.Left + "Testing testicles";
+           //     printerstring += Printer.HorizontalTab;
+           //     printerstring += i;
+           // }
+           // printerstring += Printer.Escape + "d" + (char)5;
+           // Printer.SendStringToPrinter(printerstring);
         }
 
         private void buttonClockin_Click(object sender, EventArgs e)
@@ -121,7 +134,7 @@ namespace EPOS
         }
 
         private void buttonContinue_Click(object sender, EventArgs e)
-        {
+        { 
             if (textBoxCode.Text != "")
             {
                 Globals.TryLogin(textBoxCode.Text);
@@ -138,7 +151,9 @@ namespace EPOS
                         }
                         else
                         {
-                            MessageBox.Show("Continue Successful");
+                            Globals.MenuNo = 1;
+                            SaleScreen sales = new SaleScreen();
+                            sales.ShowDialog();
                             textBoxCode.Text = "";
                         }
                     }
@@ -158,5 +173,6 @@ namespace EPOS
                 MessageBox.Show("Please Enter Login Code");
             }
         }
+
     }
 }

@@ -32,8 +32,6 @@ namespace EPOS
         {
             Globals.GetColors();
             BackColor = Color.FromName(Globals.Backcolor);
-            listBox1.BackColor = Color.FromName(Globals.Backcolor);
-            listBox1.ForeColor = Color.FromName(Globals.Fontcolor);
             labelName.Text = Globals.Pubname;
             foreach (Control c in this.Controls)
             {

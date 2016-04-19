@@ -52,26 +52,33 @@ namespace EPOS
         {
             if (textBoxName.Text != "")
             {
-                if (Globals.IDNo != -1)
+                if (textBoxName.Text.Length <= 25)
                 {
-                    SqlConnection cat = new SqlConnection(Globals.dataconnection);
-                    SqlCommand show = new SqlCommand("UPDATE Category SET Name = @name WHERE CategoryID = @id", cat);
-                    cat.Open();
-                    show.Parameters.AddWithValue("@id", Globals.IDNo);
-                    show.Parameters.AddWithValue("@name", textBoxName.Text);
-                    show.ExecuteNonQuery();
-                    cat.Close();
+                    if (Globals.IDNo != -1)
+                    {
+                        SqlConnection cat = new SqlConnection(Globals.dataconnection);
+                        SqlCommand show = new SqlCommand("UPDATE Category SET Name = @name WHERE CategoryID = @id", cat);
+                        cat.Open();
+                        show.Parameters.AddWithValue("@id", Globals.IDNo);
+                        show.Parameters.AddWithValue("@name", textBoxName.Text);
+                        show.ExecuteNonQuery();
+                        cat.Close();
+                    }
+                    else
+                    {
+                        SqlConnection cat = new SqlConnection(Globals.dataconnection);
+                        SqlCommand show = new SqlCommand("INSERT INTO Category (Name) VALUES (@name)", cat);
+                        cat.Open();
+                        show.Parameters.AddWithValue("@name", textBoxName.Text);
+                        show.ExecuteNonQuery();
+                        cat.Close();
+                    }
+                    this.Close();
                 }
                 else
                 {
-                    SqlConnection cat = new SqlConnection(Globals.dataconnection);
-                    SqlCommand show = new SqlCommand("INSERT INTO Category (Name) VALUES (@name)", cat);
-                    cat.Open();
-                    show.Parameters.AddWithValue("@name", textBoxName.Text);
-                    show.ExecuteNonQuery();
-                    cat.Close();
+                    MessageBox.Show("Category name is too long");
                 }
-                this.Close();
             }
             else
             {

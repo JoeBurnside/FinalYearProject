@@ -62,7 +62,8 @@ namespace EPOS
                         Globals.TryLogin(textBoxCode.Text);
                         if (Globals.UserLevel == "Manager" || Globals.UserLevel == "Supervisor")
                         {
-                            Application.Exit();
+                            Printer.OpenTill();
+                            Globals.AddNoSale();
                         }
                         else if (Globals.UserLevel == "Staff")
                         {

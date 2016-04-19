@@ -48,6 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -79,6 +80,12 @@
     <Compile Include="AddEditPayment.Designer.cs">
       <DependentUpon>AddEditPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditProduct.Designer.cs">
+      <DependentUpon>AddEditProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,11 +98,35 @@
     <Compile Include="AddEditUnits.Designer.cs">
       <DependentUpon>AddEditUnits.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMenu.Designer.cs">
+      <DependentUpon>AddMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplyDiscount.Designer.cs">
+      <DependentUpon>ApplyDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buttons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buttons.Designer.cs">
+      <DependentUpon>Buttons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Discount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Discount.Designer.cs">
       <DependentUpon>Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditButton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditButton.Designer.cs">
+      <DependentUpon>EditButton.cs</DependentUpon>
     </Compile>
     <Compile Include="ListObject.cs" />
     <Compile Include="Clock.cs">
@@ -128,17 +159,24 @@
     <Compile Include="Payments.Designer.cs">
       <DependentUpon>Payments.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProductMenu.Designer.cs">
-      <DependentUpon>ProductMenu.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Printer.cs" />
     <Compile Include="Products.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Products.Designer.cs">
       <DependentUpon>Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaleScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleScreen.Designer.cs">
+      <DependentUpon>SaleScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaleUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleUnit.Designer.cs">
+      <DependentUpon>SaleUnit.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
@@ -194,11 +232,23 @@
     <EmbeddedResource Include="AddEditPayment.resx">
       <DependentUpon>AddEditPayment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEditProduct.resx">
+      <DependentUpon>AddEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditStaff.resx">
       <DependentUpon>AddEditStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditUnits.resx">
       <DependentUpon>AddEditUnits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMenu.resx">
+      <DependentUpon>AddMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplyDiscount.resx">
+      <DependentUpon>ApplyDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buttons.resx">
+      <DependentUpon>Buttons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Category.resx">
       <DependentUpon>Category.cs</DependentUpon>
@@ -210,6 +260,9 @@
     <EmbeddedResource Include="Discount.resx">
       <DependentUpon>Discount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditButton.resx">
+      <DependentUpon>EditButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Numberpad.resx">
       <DependentUpon>Numberpad.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,11 +272,14 @@
     <EmbeddedResource Include="Payments.resx">
       <DependentUpon>Payments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductMenu.resx">
-      <DependentUpon>ProductMenu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleScreen.resx">
+      <DependentUpon>SaleScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleUnit.resx">
+      <DependentUpon>SaleUnit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>

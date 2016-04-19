@@ -42,7 +42,9 @@ namespace EPOS
 
         private void buttonNoSale_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Printer.OpenTill();
+            Globals.AddNoSale();
+
         }
         private void Recolor()
         {
@@ -86,7 +88,7 @@ namespace EPOS
 
         private void buttonProductMan_Click(object sender, EventArgs e)
         {
-            ProductMenu product = new ProductMenu();
+            Products product = new Products();
             product.ShowDialog();
         }
 
@@ -104,6 +106,13 @@ namespace EPOS
         {
             Payments payments = new Payments();
             payments.ShowDialog();
+        }
+
+        private void buttonButtonMan_Click(object sender, EventArgs e)
+        {
+            Globals.MenuNo = 1;
+            Buttons buttons = new Buttons();
+            buttons.ShowDialog();
         }
     }
 }

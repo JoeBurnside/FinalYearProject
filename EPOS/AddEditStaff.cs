@@ -86,43 +86,50 @@ namespace EPOS
         {
             if (textBoxName.Text != "")
             {
-                if (textBoxId.Text.Length == 4)
+                if (textBoxName.Text.Length <= 20)
                 {
-                    int id;
-                    if (int.TryParse(textBoxId.Text, out id))
+                    if (textBoxId.Text.Length == 4)
                     {
-                        SqlConnection sta = new SqlConnection(Globals.dataconnection);
-                        SqlCommand sho = new SqlCommand("SELECT * FROM Staff WHERE StaffID = @id", sta);
-                        sho.Parameters.AddWithValue("@id", id);
-                        sta.Open();
-                        SqlDataReader reader = sho.ExecuteReader();
-                        if (reader.Read())
+                        int id;
+                        if (int.TryParse(textBoxId.Text, out id))
                         {
-                           if (Globals.IDNo == id)
+                            SqlConnection sta = new SqlConnection(Globals.dataconnection);
+                            SqlCommand sho = new SqlCommand("SELECT * FROM Staff WHERE StaffID = @id", sta);
+                            sho.Parameters.AddWithValue("@id", id);
+                            sta.Open();
+                            SqlDataReader reader = sho.ExecuteReader();
+                            if (reader.Read())
                             {
-                                addeditstaff(id);
+                                if (Globals.IDNo == id)
+                                {
+                                    addeditstaff(id);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Staff ID Number already in use");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Staff ID Number already in use");
+                                addeditstaff(id);
                             }
+                            sta.Close();
+
+
                         }
                         else
                         {
-                            addeditstaff(id);
+                            MessageBox.Show("User ID number must be a number");
                         }
-                        sta.Close();
-                        
-                       
                     }
                     else
                     {
-                        MessageBox.Show("User ID number must be a number");
+                        MessageBox.Show("User ID number must be 4 digits long");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("User ID number must be 4 digits long");
+                    MessageBox.Show("User name is too long");
                 }
             }
             else
