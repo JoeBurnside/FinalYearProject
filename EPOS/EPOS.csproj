@@ -104,6 +104,12 @@
     <Compile Include="AddMenu.Designer.cs">
       <DependentUpon>AddMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTab.Designer.cs">
+      <DependentUpon>AddTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplyDiscount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
     <Compile Include="Numberpad.Designer.cs">
       <DependentUpon>Numberpad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pay.Designer.cs">
+      <DependentUpon>Pay.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaymentMethod.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +177,12 @@
     </Compile>
     <Compile Include="Products.Designer.cs">
       <DependentUpon>Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaleDone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleDone.Designer.cs">
+      <DependentUpon>SaleDone.cs</DependentUpon>
     </Compile>
     <Compile Include="SaleScreen.cs">
       <SubType>Form</SubType>
@@ -217,11 +235,29 @@
     <Compile Include="Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tabs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabs.Designer.cs">
+      <DependentUpon>Tabs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Units.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Units.Designer.cs">
       <DependentUpon>Units.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTabs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTabs.Designer.cs">
+      <DependentUpon>ViewTabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTransactions.Designer.cs">
+      <DependentUpon>ViewTransactions.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddEditCategory.resx">
       <DependentUpon>AddEditCategory.cs</DependentUpon>
@@ -243,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddMenu.resx">
       <DependentUpon>AddMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTab.resx">
+      <DependentUpon>AddTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplyDiscount.resx">
       <DependentUpon>ApplyDiscount.cs</DependentUpon>
@@ -266,6 +305,9 @@
     <EmbeddedResource Include="Numberpad.resx">
       <DependentUpon>Numberpad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pay.resx">
+      <DependentUpon>Pay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaymentMethod.resx">
       <DependentUpon>PaymentMethod.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleDone.resx">
+      <DependentUpon>SaleDone.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SaleScreen.resx">
       <DependentUpon>SaleScreen.cs</DependentUpon>
@@ -308,8 +353,17 @@
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tabs.resx">
+      <DependentUpon>Tabs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Units.resx">
       <DependentUpon>Units.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTabs.resx">
+      <DependentUpon>ViewTabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTransactions.resx">
+      <DependentUpon>ViewTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

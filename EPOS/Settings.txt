@@ -1,4 +1,4 @@
 Horse And Groom
-Yellow
-Purple
-DarkViolet
+MidnightBlue
+Wheat
+Orange

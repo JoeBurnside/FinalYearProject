@@ -103,16 +103,6 @@ namespace EPOS
            ManagerLogin managerLogin = new ManagerLogin("NoSale");
            managerLogin.ShowDialog();
            textBoxCode.Text = "";
-           // String printerstring = Printer.title + Printer.Newline + Printer.normaltext + "Testing testicles";
-           // printerstring += (char)27 + "D" + (char)30 + (char)0;
-           // for (int i = 0; i < 10; i++)
-           // {
-           //     printerstring += Printer.Newline + Printer.Left + "Testing testicles";
-           //     printerstring += Printer.HorizontalTab;
-           //     printerstring += i;
-           // }
-           // printerstring += Printer.Escape + "d" + (char)5;
-           // Printer.SendStringToPrinter(printerstring);
         }
 
         private void buttonClockin_Click(object sender, EventArgs e)

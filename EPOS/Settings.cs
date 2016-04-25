@@ -159,25 +159,35 @@ namespace EPOS
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            String Pubname = textBoxName.Text;
-            String Backcolor = comboBoxBg.SelectedItem.ToString();
-            String Buttoncolor = comboBoxButton.SelectedItem.ToString();
-            String Fontcolor = comboBoxFont.SelectedItem.ToString();
-            using (StreamWriter writer =
-        new StreamWriter(@"C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\Settings.txt"))
+            if (textBoxName.Text != "")
             {
-                writer.WriteLine(Pubname);
-                writer.WriteLine(Fontcolor);
-                writer.WriteLine(Backcolor);
-                writer.WriteLine(Buttoncolor);
+                if (textBoxName.Text.Length < 255)
+                {
+                    String Pubname = textBoxName.Text;
+                    String Backcolor = comboBoxBg.SelectedItem.ToString();
+                    String Buttoncolor = comboBoxButton.SelectedItem.ToString();
+                    String Fontcolor = comboBoxFont.SelectedItem.ToString();
+                    using (StreamWriter writer =
+                new StreamWriter(@"C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\Settings.txt"))
+                    {
+                        writer.WriteLine(Pubname);
+                        writer.WriteLine(Fontcolor);
+                        writer.WriteLine(Backcolor);
+                        writer.WriteLine(Buttoncolor);
+                    }
+                    Manager login = new Manager();
+                    login.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Pub name is too long");
+                }
             }
-            Manager login = new Manager();
-            login.Show();
-            this.Close();
-        }
-        public void recolor_forms(Login login, Manager manager)
-        {
-
+            else
+            {
+                MessageBox.Show("Please enter a pub name");
+            }
         }
     }
 }

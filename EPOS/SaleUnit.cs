@@ -138,24 +138,46 @@ namespace EPOS
             {
                 if (textBoxPrice.Text != "")
                 {
-                    decimal price = Decimal.Parse(textBoxPrice.Text);
-                    decimal pricernd = Decimal.Round(price, 2);
-                    SqlConnection prod = new SqlConnection(Globals.dataconnection);
-                    SqlCommand show = new SqlCommand("UPDATE SaleUnit SET UnitID = @unit, Price = @price WHERE SaleUnitID = @id", prod);
-                    prod.Open();
-                    show.Parameters.AddWithValue("@unit", int.Parse(comboBoxUnit.SelectedValue.ToString()));
-                    show.Parameters.AddWithValue("@price", pricernd);
-                    show.Parameters.AddWithValue("@id", int.Parse(listBox1.SelectedValue.ToString()));
-                    show.ExecuteNonQuery();
-                    prod.Close();
-                    fillbox();
+                    decimal price;
+                    if (decimal.TryParse(textBoxPrice.Text, out price))
+                    {
+                        if (price < 100m)
+                        {
+                            if (price < 0m)
+                            {
+                                MessageBox.Show("Selling price must be a positive number");
+                            }
+                            else
+                            {
+                                decimal pricernd = Decimal.Round(price, 2);
+                                SqlConnection prod = new SqlConnection(Globals.dataconnection);
+                                SqlCommand show = new SqlCommand("UPDATE SaleUnit SET UnitID = @unit, Price = @price WHERE SaleUnitID = @id", prod);
+                                prod.Open();
+                                show.Parameters.AddWithValue("@unit", int.Parse(comboBoxUnit.SelectedValue.ToString()));
+                                show.Parameters.AddWithValue("@price", pricernd);
+                                show.Parameters.AddWithValue("@id", int.Parse(listBox1.SelectedValue.ToString()));
+                                show.ExecuteNonQuery();
+                                prod.Close();
+                                fillbox();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Price must be less than £100");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Price format should be £0.00");
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Please enter a price");
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show("Please select a product from the list");
             }
         }
@@ -167,17 +189,31 @@ namespace EPOS
                 decimal price;
                 if (decimal.TryParse(textBoxPrice.Text, out price))
                 {
-                    decimal pricernd = Decimal.Round(price, 2);
-                    SqlConnection adduni = new SqlConnection(Globals.dataconnection);
-                    SqlCommand show = new SqlCommand("INSERT INTO SaleUnit (ProductID, UnitID, Price) VALUES (@prodid, @unitid, @price)", adduni);
-                    adduni.Open();
-                    show.Parameters.AddWithValue("@prodid", Globals.IDNo);
-                    show.Parameters.AddWithValue("@unitid", int.Parse(comboBoxUnit.SelectedValue.ToString()));
-                    show.Parameters.AddWithValue("@price", pricernd);
-                    show.ExecuteNonQuery();
-                    adduni.Close();
-                    fillbox();
-                    textBoxPrice.Text = "";
+                    if (price < 100m)
+                    {
+                        if (price < 0m)
+                        {
+                            MessageBox.Show("Selling price must be a positive number");
+                        }
+                        else
+                        {
+                            decimal pricernd = Decimal.Round(price, 2);
+                            SqlConnection adduni = new SqlConnection(Globals.dataconnection);
+                            SqlCommand show = new SqlCommand("INSERT INTO SaleUnit (ProductID, UnitID, Price) VALUES (@prodid, @unitid, @price)", adduni);
+                            adduni.Open();
+                            show.Parameters.AddWithValue("@prodid", Globals.IDNo);
+                            show.Parameters.AddWithValue("@unitid", int.Parse(comboBoxUnit.SelectedValue.ToString()));
+                            show.Parameters.AddWithValue("@price", pricernd);
+                            show.ExecuteNonQuery();
+                            adduni.Close();
+                            fillbox();
+                            textBoxPrice.Text = "";
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Price must be less than £100");
+                    }
                 }
                 else
                 {

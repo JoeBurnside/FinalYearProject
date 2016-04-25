@@ -126,11 +126,16 @@ namespace EPOS
 
         private void buttonPay_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (dataGridView1.Rows.Count > 0)
+            {
+                Pay pay = new Pay();
+                pay.ShowDialog();
+                this.Close();
+            }
         }
         private void populatedatagrid()
         {
-            decimal total = 0m;
+            Globals.Total = 0m;
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
             SqlConnection basket = new SqlConnection(Globals.dataconnection);
@@ -142,10 +147,10 @@ namespace EPOS
             {
                 string[] row1 = new string[] { reader.GetInt32(0).ToString(), reader.GetString(1) + ": " + reader.GetString(2), "£" + reader.GetDecimal(3).ToString() };
                 dataGridView1.Rows.Add(row1);
-                total += reader.GetDecimal(3);
+                Globals.Total += reader.GetDecimal(3);
             }
             basket.Close();
-            labelTotal.Text = "£" + total.ToString();
+            labelTotal.Text = "£" + Globals.Total.ToString();
             foreach (DataGridViewColumn col in dataGridView1.Columns)
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -481,6 +486,13 @@ namespace EPOS
             {
                 MessageBox.Show("Please select an item to void");
             }
+        }
+
+        private void buttonTabs_Click(object sender, EventArgs e)
+        {
+            Tabs tabs = new Tabs();
+            tabs.ShowDialog();
+            this.Close();
         }
     }
 }

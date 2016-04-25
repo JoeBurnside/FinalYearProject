@@ -32,3 +32,9 @@ C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Buttons.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddMenu.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.EditButton.resources
 C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.SaleScreen.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Pay.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.SaleDone.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.ViewTransactions.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.AddTab.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.Tabs.resources
+C:\Users\Joe\Desktop\Uni Stuff\FYP\EPOS\EPOS\obj\Debug\EPOS.ViewTabs.resources

@@ -159,5 +159,24 @@ namespace EPOS
             get { return m_menuno; }
             set { m_menuno = value; }
         }
+        private static decimal m_total;
+        public static decimal Total
+        {
+            get { return m_total; }
+            set { m_total = value; }
+        }
+        private static decimal m_cash;
+        public static decimal Cash
+        {
+            get { return m_cash; }
+            set { m_cash = value; }
+        }
+        private static decimal m_change;
+        public static decimal Change
+        {
+            get { return m_change; }
+            set { m_change = value; }
+        }
+
     }
 }

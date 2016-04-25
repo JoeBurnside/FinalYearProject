@@ -112,7 +112,21 @@ namespace EPOS
                     int id;
                     if (int.TryParse(textBoxAmount.Text, out id))
                     {
-                        addeditdiscount(id);
+                        if (id < 100)
+                        {
+                            if (id < 0)
+                            {
+                                MessageBox.Show("Discount amount must be a positive number");
+                            }
+                            else
+                            {
+                                addeditdiscount(id);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Discount amount is too large");
+                        }
                     }
                     else
                     {
