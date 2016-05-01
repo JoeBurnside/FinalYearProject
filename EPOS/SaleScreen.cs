@@ -78,6 +78,7 @@ namespace EPOS
                 }
                 else
                 {
+                    control.Visible = true;
                     control.BackColor = Color.FromName(datatable.Rows[i - 1][2].ToString());
                     control.ForeColor = Color.FromName(datatable.Rows[i - 1][5].ToString());
                     control.Font = new Font(datatable.Rows[i - 1][3].ToString(), (int)datatable.Rows[i - 1][4]);

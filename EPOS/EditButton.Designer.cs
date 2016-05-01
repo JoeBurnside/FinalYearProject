@@ -204,6 +204,7 @@
             this.comboBoxFontSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxFontSize.ForeColor = System.Drawing.SystemColors.MenuText;
             this.comboBoxFontSize.FormattingEnabled = true;
+            this.comboBoxFontSize.IntegralHeight = false;
             this.comboBoxFontSize.ItemHeight = 37;
             this.comboBoxFontSize.Items.AddRange(new object[] {
             "6",
@@ -257,6 +258,7 @@
             this.comboBoxVariable.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVariable.ForeColor = System.Drawing.SystemColors.MenuText;
             this.comboBoxVariable.FormattingEnabled = true;
+            this.comboBoxVariable.IntegralHeight = false;
             this.comboBoxVariable.ItemHeight = 37;
             this.comboBoxVariable.Location = new System.Drawing.Point(363, 537);
             this.comboBoxVariable.Name = "comboBoxVariable";

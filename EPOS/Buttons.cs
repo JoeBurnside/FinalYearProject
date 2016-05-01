@@ -52,9 +52,12 @@ namespace EPOS
         }
         private void ComboBoxMenu_SelectedValueChanged(object sender, EventArgs e)
         {
-            Globals.MenuNo = int.Parse(comboBoxMenu.SelectedValue.ToString());
-            Filldatatable(Globals.MenuNo);
-            popbuttons();
+            if (comboBoxMenu.SelectedValue != null)
+            {
+                Globals.MenuNo = int.Parse(comboBoxMenu.SelectedValue.ToString());
+                Filldatatable(Globals.MenuNo);
+                popbuttons();
+            }
         }
         private void Recolor()
         {

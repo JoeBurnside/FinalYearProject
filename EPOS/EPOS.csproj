@@ -134,6 +134,12 @@
     <Compile Include="EditButton.Designer.cs">
       <DependentUpon>EditButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productman.Designer.cs">
+      <DependentUpon>Productman.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListObject.cs" />
     <Compile Include="Clock.cs">
       <SubType>Form</SubType>
@@ -313,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Payments.resx">
       <DependentUpon>Payments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productman.resx">
+      <DependentUpon>Productman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products.resx">
       <DependentUpon>Products.cs</DependentUpon>

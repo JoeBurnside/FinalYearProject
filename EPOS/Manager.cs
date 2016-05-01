@@ -120,7 +120,7 @@ namespace EPOS
 
         private void buttonProductMan_Click(object sender, EventArgs e)
         {
-            Products product = new Products();
+            Productman product = new Productman();
             product.ShowDialog();
         }
 

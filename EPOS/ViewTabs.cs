@@ -53,7 +53,7 @@ namespace EPOS
             dataGridView2.Rows.Clear();
             dataGridView2.Refresh();
             SqlConnection basket = new SqlConnection(Globals.dataconnection);
-            SqlCommand show = new SqlCommand("SELECT Tab.TabID, Tab.Name, Tab.Opened, (SELECT Staff.Name FROM Staff, Tab WHERE Staff.StaffID = Tab.OpenedBy) AS Opened, Tab.LastAccessed, (SELECT Staff.Name FROM Staff, Tab WHERE Staff.StaffID = Tab.AccessedBy) AS Accessed FROM Staff, Tab ORDER BY Tab.TabID", basket);
+            SqlCommand show = new SqlCommand("SELECT Tab.TabID, Tab.Name, Tab.Opened, s.Name, Tab.LastAccessed, t.Name FROM Staff s, Staff t, Tab WHERE s.StaffID = Tab.OpenedBy AND t.StaffID = Tab.AccessedBy ORDER BY Tab.TabID", basket);
             basket.Open();
             SqlDataReader reader = show.ExecuteReader();
             while (reader.Read())
